@@ -24,16 +24,21 @@ import java.util.*;
 
 public class Bee1255 {
     public static void main(String[] args) {
+        Bee1255 be = new Bee1255();
         Scanner scanner = new Scanner(System.in);
         int linhas = scanner.nextInt();
         scanner.nextLine();
         String[] frases = new String[linhas];
-        StringBuilder result = new StringBuilder();
-
-
-
         for (int i = 0; i < linhas; i++) {
             frases[i] = scanner.nextLine();
+        }
+        be.extracted(linhas, frases);
+    }
+
+    public void extracted(int linhas, String[] frases) {
+        StringBuilder result = new StringBuilder();
+
+        for (int i = 0; i < linhas; i++) {
             Map<Character, Integer> letrasRep = new TreeMap<>();
             int maxNumb = 0;
             for(Character c : frases[i].toLowerCase().replace(" ", "").toCharArray()){
@@ -53,8 +58,5 @@ public class Bee1255 {
 
         }
         System.out.print(result);
-
-
-
     }
 }
